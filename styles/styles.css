@@ -122,11 +122,18 @@ span{
 }
 
 /* home */
+.no-webp .home{
+    background-image: url(../images/home-img.png);
+}
+
+.webp .home{
+    background-image: url(../images/home-img.webp);
+}
+
 .home{
     display:flex;
     justify-content: flex-end;
     align-items: center;
-    background-image: url(../images/home-img.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
