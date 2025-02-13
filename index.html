@@ -46,7 +46,7 @@
             </p>
 
             <div class="social-media">
-                <a href="#"><i class='bx bxl-linkedin-square bx-md'></i></a>
+                <a href="https://www.linkedin.com/in/edward-wayne-cruz/" target="_blank"><i class='bx bxl-linkedin-square bx-md'></i></a>
                 <a href="https://github.com/guaine86" target="_blank"><i class='bx bxl-github bx-md'></i></a>
                 <a href="https://app.netlify.com/teams/guaine86/sites" target="_blank"><i class='bx bxl-netlify bx-md' ></i></a>
                 <a href="https://www.instagram.com/impresioname.3d?igsh=amQ1dmZva3czc3Yx" target="_blank"><i class='bx bxl-instagram-alt bx-md'></i></a>
@@ -201,22 +201,22 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contacta<span>me</span></h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, corporis iste hic aperiam eveniet consequatur sapiente perferendis impedit eligendi molestiae, totam soluta, quam corrupti facilis ipsa. Et ad quisquam ipsum?
+            El formulario abrira su gestor de correos electronicos para hacer el envio del email.
         </p>
         <div class="contact-content">
             <form action="mailto:ewcruz@yahoo.com.ar" method="post" enctype="text/plain">
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
-                <input type="email" name="email" id="email" placeholder="Correo Electronico">
-                <input type="number" name="telefono" id="telofono" placeholder="Numero de Telefono">
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo" pattern="^[a-zA-Z|ñ\s]+$" title="Este campo admite solo caracteres alfabeticos y minimo 2 letras" minlength="2" maxlength="35"  autocomplete="off" required>
+                <input type="email" name="email" id="email" placeholder="Correo Electronico" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Formato valido (algo@mail.com)" maxlength="30"  autocomplete="off" required>
+                <input type="tel" name="telefono" id="telofono" placeholder="Numero de Telefono" pattern="^\d*[-|\s]?\d*[-|\s]?\d*$" title="Ingrese con el formato especificado (11 5555-6666)" minlength="8" maxlength="15"  autocomplete="off" required>
                 <input type="text" name="asunto" id="asunto" placeholder="Asunto">
-                <textarea name="mensaje" id="mensaje" placeholder="Ingrese su mensaje"></textarea>
+                <textarea name="mensaje" id="mensaje" placeholder="Ingrese su mensaje" required></textarea>
 
                 <div class="btn-submit">
                     <input class="btn" type="submit" value="Enviar Mensaje">
                 </div>
             </form>
             <div class="contact-img">
-                <img src="images/img-contact.svg" alt="imagen de contacto">
+                <img src="images/contacto.png" alt="imagen de contacto">
             </div>
         </div>
     </section>
@@ -224,7 +224,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="social-media">
-                <a href="#"><i class='bx bxl-linkedin-square bx-md'></i></a>
+                <a href="https://www.linkedin.com/in/edward-wayne-cruz/" target="_blank"><i class='bx bxl-linkedin-square bx-md'></i></a>
                 <a href="https://github.com/guaine86" target="_blank"><i class='bx bxl-github bx-md'></i></a>
                 <a href="https://app.netlify.com/teams/guaine86/sites" target="_blank"><i class='bx bxl-netlify bx-md' ></i></a>
                 <a href="https://www.instagram.com/impresioname.3d?igsh=amQ1dmZva3czc3Yx" target="_blank"><i class='bx bxl-instagram-alt bx-md'></i></a>

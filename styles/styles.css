@@ -29,7 +29,13 @@ body{
 /* utilidades */
 section{
     min-height: 100vh;
-    padding: 10rem 10% 2rem;
+    padding: 1rem;
+}
+
+@media(min-width: 768px){
+    section{
+        padding: 10rem 10% 2rem;
+    }
 }
 
 .heading{
@@ -49,13 +55,9 @@ span{
 
 /* encabezado */
 .header{
-    position: fixed;
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 100;
-
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 2rem 10%;
@@ -63,10 +65,27 @@ span{
     box-shadow: 0 1px .3rem var(--color-texto);
 }
 
+@media(max-width: 768px){
+    .header{
+        font-size: large;
+    }
+}
+
+@media(min-width: 768px){
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        flex-direction: row;
+    }
+}
+
 .logo{
     font-size: 2.5rem;
     color: var(--color-principal);
     font-weight: 700;
+    margin-bottom: 2rem;
 }
 
 .logo:hover{
@@ -77,7 +96,14 @@ span{
 /* navegador */
 .navbar{
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
+}
+
+@media(min-width: 768px){
+    .navbar{
+        flex-direction: row;
+    }
 }
 
 .navbar a{
@@ -86,6 +112,7 @@ span{
     transition: .3s ease;
     border-bottom: .2rem solid transparent;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .navbar a:hover,
@@ -105,31 +132,115 @@ span{
 }
 
 .home-content{
-    width: 70%;
-    margin-left: 5rem;
+    width: 99%;
     padding: 6rem 2rem;
     background-color: rgba(247, 247, 247, 0.9);
     border: .2rem solid var(--color-principal);
     border-radius: 2rem;
 }
 
+@media(min-width:768px){
+    .home-content{
+        width: max(70%, 650px);
+        margin-left: 5rem;
+    }
+}
+
 .home-content h1{
-    font-size: 4.5rem;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.2;
+    display: grid;
 }
 
 .home-content h3{
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+@media(max-width: 768px){
+    .home-content h1{
+        font-size: 3.5rem;
+        margin: 0;
+    }
+    .home-content h1 span{
+        font-size: 3.3rem;
+    }
+    .home-content h3{
+        text-align: center;
+    }
+}
+
+@media(max-width: 360px){
+    .home-content h1,
+    .home-content h1 span{
+        font-size: 3rem;
+    }
+}
+
+@media(min-width: 768px){
+    .home-content h1{
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        grid-template-columns: auto 1fr;
+        column-gap: 1rem;
+    }
+    
+    .home-content h1 span{
+        font-size: 4.5rem;
+    }
+    
+    .home-content h3{
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+}
+
+@media(width: 768px){
+    .header{
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+    }
+    .logo{
+        justify-self: end;
+    }
+    .navbar{
+        justify-content: space-around;
+    }
+    .home-content h1{
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: none;
+    }
+    .home-content h1 span{
+        grid-row: 2/3;
+        justify-self: end;
+    }
 }
 
 .home-content p{
     font-size: 1.8rem;
     margin-bottom: 2rem;
-    text-indent: 2rem;
-    text-align: justify;
+    text-align: center;
+    width: 100%;
+}
+
+@media(min-width: 768px){
+    .home-content p{
+        width: auto;
+        text-indent: 2rem;
+        text-align: justify;
+    }
+}
+
+@media(max-width: 768px){
+    .social-media{
+        display: flex;
+        justify-content: space-around;
+    }
 }
 
 /* redes sociales */
@@ -167,6 +278,20 @@ span{
     transition: .3s ease;
 }
 
+@media(max-width: 768px){
+    .btn,
+    .btn-wtpp{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .btn-wtpp p{
+        text-align: center;
+        width: auto;
+    }
+}
+
 .btn-wtpp{
     display: inline-flex;
     align-items: center;
@@ -199,15 +324,47 @@ span{
 
 /* seccion Acerca de... */
 .about{
-    display: flex;
+    display: grid;
     justify-content: center;
+    justify-items: center;
     align-items: center;
-    gap:2rem;
+    gap: 2rem;
     background-color: var(--bg-color-secundario)
+}
+
+@media(min-width: 768px){
+    .about{
+        display: flex;
+    }
+}
+
+@media(width: 768px){
+    .about{
+        display: grid;
+        grid-template-areas: "a a"
+                             "a b";
+    }
+    .about-content{
+        grid-area: a;
+        display: grid;
+        grid-template-areas: "parrafo parrafo"
+                             "skills  .";
+    }
+    .about-me{
+        grid-area: parrafo;
+        /* display: grid; */
+    }
+    .skills{
+        grid-area: skills;
+    }
+    .about-img{
+        grid-area: b;
+    }
 }
 
 .about-me p{
     text-indent: 2rem;
+    text-align: justify;
 }
 
 .about .heading{
@@ -268,6 +425,7 @@ span{
     flex-wrap: wrap;
     gap: 2rem;
     text-align: center;
+    justify-content: center;
 }
 
 .skills-items span,
