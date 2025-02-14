@@ -706,7 +706,7 @@ form textarea{
 /* footer */
 .footer{
     background-color: var(--bg-color-secundario);
-    padding: 4rem 0;
+    padding: 3rem 0;
     text-align: center;
     border-top: .2rem solid var(--color-principal);
 }
