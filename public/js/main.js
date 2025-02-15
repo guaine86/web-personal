@@ -15,7 +15,7 @@ const miMain = (()=>{
     })
 
     email.addEventListener('input', mensaje);
-    formulario.addEventListener('submit', (evento)=>{
+    formulario.addEventListener('submit', async (evento)=>{
         const datos = Object.fromEntries(
             new FormData(evento.target)
         )
@@ -28,7 +28,18 @@ const miMain = (()=>{
                 text: "Debe completar todos los campos!",
             });
         }else{
-            return
+            try {
+                const response = await fetch('/.netlify/functions/send-email', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(data),
+                });
+            
+                const result = await response.json();
+                document.getElementById('response-message').textContent = result.message || result.error;
+              } catch (error) {
+                document.getElementById('response-message').textContent = 'Error al enviar el mensaje';
+              }
         }
     })
 })();
