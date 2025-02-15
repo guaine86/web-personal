@@ -27,7 +27,7 @@ exports.handler = async (event, context) => {
     from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER, // El correo se envía a ti mismo
     subject: `Nuevo mensaje de contacto - Asunto: ${asunto}`,
-    text: `Nombre: ${nombre}\nEmail: ${email}\nTelefono: ${telefono}\n Mensaje: ${mensaje}`,
+    text: `Nombre: ${nombre}\nEmail: ${email}\nTelefono: ${telefono}\nMensaje: ${mensaje}`,
   };
 
   // Enviamos el correo
