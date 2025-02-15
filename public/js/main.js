@@ -20,7 +20,7 @@ const miMain = (()=>{
             new FormData(evento.target)
         )
         console.log(datos)
-        if(!datos.nombre || !datos.email || !datos.teefono || !datos.asunto || !datos.mensaje){
+        if(!datos.nombre || !datos.email || !datos.telefono || !datos.asunto || !datos.mensaje){
             evento.preventDefault();
             Swal.fire({
                 icon: "error",
