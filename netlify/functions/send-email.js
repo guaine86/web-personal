@@ -40,7 +40,7 @@ exports.handler = async (event, context) => {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error al enviar el correo' }),
+      body: JSON.stringify({ error: error.message }),
     };
   }
 };
