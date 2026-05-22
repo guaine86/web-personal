@@ -79,6 +79,13 @@ span{
         z-index: 100;
         flex-direction: row;
     }
+    .header--sticky{
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        height: 9rem;
+    }
 }
 
 .logo{
@@ -136,6 +143,7 @@ span{
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 2rem;
 }
 
 .home-content{
